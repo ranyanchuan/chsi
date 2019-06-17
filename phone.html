@@ -1,0 +1,107 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>学历查询-手机验证</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate" />
+    <meta http-equiv="cache-control" content="no-store" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="-1" />
+    <meta name="format-detection" content="telephone=no" />
+
+
+    <link rel="stylesheet" type="text/css" href='https://t1.chei.com.cn/common/wap/materialize/css/materialize.min.css?v=1483494816219'>
+    <link rel="stylesheet" type="text/css" href='https://t1.chei.com.cn/common/plugins/dialog/6.0.5/css/ui-dialog.css?v=1483494816219'>
+    <link rel="stylesheet" type="text/css" href='https://t1.chei.com.cn/common/ch/iconfont.css?v=1483494816219'>
+    <link rel="stylesheet" href='https://t1.chei.com.cn/chsi/css/wap_md.min.css?v=1483494816219' />
+    <link rel="stylesheet" href='https://t3.chei.com.cn/chsi/xlcx/lscx/css/min/wap_lscx.min.css?v=1483494816221' />
+    <script type="text/javascript" src='https://t1.chei.com.cn/common/jquery/2.1.1/jquery.min.js'></script>
+    <script src='https://t1.chei.com.cn/common/wap/materialize/js/materialize.min.js'></script>
+    <script type="text/javascript" src='https://t1.chei.com.cn/common/plugins/dialog/6.0.5/dialog-min.js'></script>
+    <script src='https://t1.chei.com.cn/common/plugins/validation/jquery.validate.min.js'></script>
+
+
+
+    <script src="https://t1.chei.com.cn/common/js/boomerang-min-20141211.js"></script>
+    <script>
+        BOOMR.init({
+            beacon_url: "https://www.chsi.com.cn/images/perf.gif",
+            log: null,
+            DNS:{
+                base_url: "https://*.chdi.com.cn/images/"
+            }
+        });
+    </script>
+
+    <script>
+        function gaTrackerOutboundLink(ele,eventCategory,eventAction,eventLabel){
+            gtag('event', eventAction, {
+                'event_category': eventCategory,
+                'event_label': eventLabel
+            });
+            return true;
+        }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100524-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-100524-1');
+    </script>
+</head>
+<div class="wap-content">
+    <div class="container">
+        <h1 class='main_title center-align'>学历查询-手机验证</h1>
+        <form id="vcode_fm" name="vcode_fm" action="info.html" method="post" autocomplete="off">
+            <div class="input-field marginTop1">
+                <input type="text" name="mphone" maxlength="11" value="" id="mphone" class="input_text valid-item" autocomplete="off"/>
+                <label for="mphone">手机号码</label>
+
+            </div>
+            <div class="input-field">
+                <input type="text" name="vcode" maxlength="6" value="" id="vcode" class="input_text valid-item" autocomplete="off"/>
+                <label for="xm">短信验证码</label>
+                <input type="button" name="mphone_messagesend_btn" value="免费获取" id="mphone_messagesend_btn" class="btn-white"/>            </div>
+            <input type="hidden" name="rndid" value="t3z0zczuo3goeumjuyc8e1oq5vlrrgpe" id="rndid"/>
+            <input type="hidden" name="state" value="CHSIWEB" id="state"/>
+            <input type="submit" id="newbutton" name="newbutton" value="查询" class="btn query-btn disabled" disabled/>
+            <div class="wap-error">
+
+
+            </div>
+        </form>
+
+
+
+
+    </div>
+</div>
+
+
+<div class="wap-footer">
+    Copyright © 2003-2019 学信网<br/>
+    <span class='footer-kfdh'><a href="tel:010-82199588">客服热线：010-82199588</a></span>
+</div>
+<script>
+    $(function(){
+        var wechatInfo = navigator.userAgent.match(/MicroMessenger\/([\d\.]+)/i) ;
+        if( !wechatInfo ) {
+            $('.wap-footer').remove();
+        }
+    })
+</script>
+<script src='https://t1.chei.com.cn/chsi/xlcx/lscx/js/wap/form-validation.js'></script>
+<script src='https://t3.chei.com.cn/chsi/xlcx/lscx/js/vcode/vcodetimehold-1.0.0.js'></script>
+<script src='https://t4.chei.com.cn/chsi/xlcx/lscx/js/vcode/vcodebyphone-1.0.0.js'></script>
+<script type="text/javascript">
+    $(function(){
+        formValideFn('vcode_fm','newbutton');
+        var refreshId = cusSetInterval(vcodetips, 1000,"mphone_messagesend_btn",refreshId,"重新获取","mphone_messagesend_btn","mphone_messagesend_btn");
+    });
+</script>

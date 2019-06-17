@@ -1,0 +1,174 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>学历查询</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate" />
+    <meta http-equiv="cache-control" content="no-store" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="学历查询,毕业证书查询,学历网上查询,学历,学历证书" />
+    <meta name="description" content="教育部唯一指定的高等教育学历查询网站。学历数据包括研究生、普通本专科、成人本专科、网络教育、高等教育自学考试以及高等教育学历文凭考试等所有国家承认的全国高等教育学历证书信息。" />
+
+
+    <link rel="stylesheet" type="text/css" href='https://t1.chei.com.cn/common/wap/materialize/css/materialize.min.css?v=1483494816219'>
+    <link rel="stylesheet" type="text/css" href='https://t1.chei.com.cn/common/plugins/dialog/6.0.5/css/ui-dialog.css?v=1483494816219'>
+    <link rel="stylesheet" type="text/css" href='https://t1.chei.com.cn/common/ch/iconfont.css?v=1483494816219'>
+    <link rel="stylesheet" href='https://t1.chei.com.cn/chsi/css/wap_md.min.css?v=1483494816219' />
+    <link rel="stylesheet" href='https://t3.chei.com.cn/chsi/xlcx/lscx/css/min/wap_lscx.min.css?v=1483494816221' />
+    <script type="text/javascript" src='https://t1.chei.com.cn/common/jquery/2.1.1/jquery.min.js'></script>
+    <script src='https://t1.chei.com.cn/common/wap/materialize/js/materialize.min.js'></script>
+    <script type="text/javascript" src='https://t1.chei.com.cn/common/plugins/dialog/6.0.5/dialog-min.js'></script>
+    <script src='https://t1.chei.com.cn/common/plugins/validation/jquery.validate.min.js'></script>
+
+
+
+    <script src="https://t1.chei.com.cn/common/js/boomerang-min-20141211.js"></script>
+    <script>
+        BOOMR.init({
+            beacon_url: "https://www.chsi.com.cn/images/perf.gif",
+            log: null,
+            DNS:{
+                base_url: "https://*.chdi.com.cn/images/"
+            }
+        });
+    </script>
+
+    <script>
+        function gaTrackerOutboundLink(ele,eventCategory,eventAction,eventLabel){
+            gtag('event', eventAction, {
+                'event_category': eventCategory,
+                'event_label': eventLabel
+            });
+            return true;
+        }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100524-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-100524-1');
+    </script>
+</head>
+<body>
+<div class="wap-content">
+    <div class="container">
+        <h1 class='main_title center-align'>中国高等教育学历证书查询</h1>
+        <form method="post" name="queryForm" id="queryForm" action="phone.html">
+            <div class="input-field marginTop1">
+                <input name="zsbh" type="text" id="zsbh" maxlength="18" value="" class='input_text valid-item' autocomplete="off"/>
+                <label for="zsbh">证书编号</label>
+                <div class="img-tip">
+                    <i class="iconfont" title="提示">&#xe668;</i>
+                </div>
+            </div>
+            <div class="input-field">
+                <input name="xm" id="xm" type="text" maxlength="40" value="" class='input_text valid-item' autocomplete="off"/>
+                <label for="xm">姓名</label>
+            </div>
+
+            <div class="input-field">
+                <input name="yzm" type="text" id="yzm" class="valid-item" autocomplete="off"/>
+                <label for="yzm">
+                    图片验证码
+                    <div class="yzm-msg-box">
+
+                    </div>
+                </label>
+                <div class='rzbg-cxm'></div>
+            </div>
+            <div id="yzm-container">
+                <div class="captchBlock clearfix">
+                    <img id='captchImage' title='点击更换' onclick="change_capchImage_div()" alt="图片验证码读取中..." style="cursor:pointer;" src="https://www.chsi.com.cn/xlcx/lscx/captchimagecreateaction.do?time=1550622616383&rdmid=wvvbu4mnavhg7zrpvsj1ne6cya2fbjaz&v=1483494816220"/>
+                    <p onclick="change_capchImage_div()" class="yzm-tips">看不清楚？<br>点击图片换一张</p>
+                </div>
+            </div>
+            <input name="openid" id="openid" type="hidden" value=""/>
+            <input name="unionid" id="unionid" type="hidden" value=""/>
+            <input name="rdmid" id="rdmid" type="hidden" value="wvvbu4mnavhg7zrpvsj1ne6cya2fbjaz">
+            <input name="state" id="state" type="hidden" value="CHSIWEB">
+            <input name="xueliSubmit" id="xueliSubmit" type="submit" class="btn query-btn disabled" disabled value="免费查询"/>
+
+        </form>
+        <div class="queryid-tips" style="margin-top: 15px;">
+            <span>声明：</span><br/>
+            学历查询范围：2001年以来国家承认的各类高等教育学历证书电子注册信息（含学历证明书）。包括研究生、普通本专科、成人本专科、网络教育、开放教育、高等教育自学考试以及高等教育学历文凭考试等。
+        </div>
+    </div>
+</div>
+
+
+<div class="wap-footer">
+    Copyright © 2003-2019 学信网<br/>
+    <span class='footer-kfdh'><a href="tel:010-82199588">客服热线：010-82199588</a></span>
+</div>
+<script>
+    $(function(){
+        var wechatInfo = navigator.userAgent.match(/MicroMessenger\/([\d\.]+)/i) ;
+        if( !wechatInfo ) {
+            $('.wap-footer').remove();
+        }
+    })
+</script>
+<div id="modal1" class="modal">
+    <div class="modal-title">
+        <h5>证书编号样例图</h5>
+        <span class="modal-close" title="cancel">×</span>
+    </div>
+    <div class="modal-content">
+        <img src='https://t3.chei.com.cn/chsi/xlcx/lscx/images/zhengshu.jpg?v=1483358911971' class="zsbh-img" width="100%">
+    </div>
+</div>
+<script src='https://t1.chei.com.cn/chsi/xlcx/lscx/js/wap/form-validation.js'></script>
+<script type="text/javascript">
+    $(function (){
+        //页面绑定事件
+        eventsFn();
+        //添加前台校验
+        formValideFn('queryForm', 'xueliSubmit');
+        setYzmMsg()
+    });
+    //页面绑定事件
+    function eventsFn(){
+        //点击图片验证码显示图片验证码样式
+        $('#yzm').click(function(){
+            $('.captchBlock').show();
+        });
+        //图片提示
+        $('.img-tip').click(function(){
+            $('#modal1').openModal();
+        });
+    }
+
+
+    var clear_time="";
+    function change_capchImage_div(){
+        clearTimeout(clear_time);
+        var rdmid = "wvvbu4mnavhg7zrpvsj1ne6cya2fbjaz";
+        $('#captchImage').attr("src", "https://www.chsi.com.cn/xlcx/lscx/captchimagecreateaction.do?time=" + new Date().getTime() +"&rdmid=" + rdmid);
+        $('#rdmid').val(rdmid);
+        $('#yzm').val('');
+        $('#yzm').focus();
+    }
+
+    function setYzmMsg(){
+        var yzmMsg = $(".yzm-msg-box span").text();
+        if(yzmMsg == "图片验证码输入有误！"){
+            $(".yzm-msg-box span").text("输入有误！");
+            $(".yzm-msg-box").parent("label.active").css("color","#e34848");
+        }
+
+    }
+</script>
+</body>
+</html>
